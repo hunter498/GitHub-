@@ -26,8 +26,6 @@ fifo_to_uart fifo_to_uart(
     .o_wr_rst_busy      (wr_rst_busy        ),
     .o_rd_rst_busy      (rd_rst_busy        )
 );
-
-
 initial rxusrclk = 0;
 always#(`WR_CLK_PERIOD/2) rxusrclk = ~rxusrclk;
 initial clk_50M = 0;
@@ -82,6 +80,4 @@ task wr_data;
         rxcharisk = 8'hff;
     end
 endtask
-
-
 endmodule
